@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LSPosed Example Module</string>
+    <string name="module_description">Example Xposed Module for LSPosed Framework</string>
+    
+    <!-- LSPosed scope configuration -->
+    <string-array name="xposed_scope">
+        <item>com.android.systemui</item>
+        <item>android</item>
+    </string-array>
+</resources>

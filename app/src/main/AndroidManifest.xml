@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions for floating overlay -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.XposedModule"
+        tools:targetApi="31">
+        
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+    <!-- Xposed Module Metadata -->
+    <meta-data
+        android:name="xposedmodule"
+        android:value="true" />
+    <meta-data
+        android:name="xposeddescription"
+        android:value="Example Xposed Module for LSPosed - Hooks into system processes" />
+    <meta-data
+        android:name="xposedminversion"
+        android:value="82" />
+    
+    <!-- LSPosed specific metadata -->
+    <meta-data
+        android:name="xposedscope"
+        android:resource="@array/xposed_scope" />
+        
+    <!-- Module scope for LSPosed (optional, can be configured in LSPosed UI) -->
+    
+    <!-- Service for floating mod menu -->
+    <service
+        android:name=".ModMenuService"
+        android:enabled="true"
+        android:exported="false" />
+
+</manifest>
